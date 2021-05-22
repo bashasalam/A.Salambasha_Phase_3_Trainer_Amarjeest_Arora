@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace = "layouts :: headCode"></head>
+
+
+<body th:style="'background: url(/img/download.jpg) no-repeat center center fixed;'">
+
+    
+<nav th:replace = "layouts :: navBarCode"></nav>
+
+
+
+<h2> Admin Login Page</h2><br>    
+    <div class="login justify-content-md-center">    
+    <form id="login" method="post" action="/admin/adminLogin">    
+        <label><b>Admin Name     
+        </b>    
+        </label>    
+        <input type="text" name="adminName" id="adminName" placeholder="Admin name">    
+        <br><br>    
+        <label><b>Password     
+        </b>    
+        </label>    
+        <input type="password" name="adminPass" id="adminPass" placeholder="password">    
+        <br><br>    
+        <input type="submit" class="btn btn-primary" name="adminSubmit" id="log" value="Log In Here">       
+        <!-- <br><br>    
+        <input type="checkbox" id="check" style="display: hidden;">    
+        <span style="display: hidden;">Remember me</span>    
+        <br><br>    
+     <a href="#">Password</a>     -->
+    </form>     
+</div>    
+
+
+</body>
+</html>
