@@ -1,51 +1,27 @@
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:replace = "layouts :: headCode"></head>
+<head th:replace = "layouts :: headCode">
+
+
+
+</head>
 
 
 <body th:style="'background: url(/img/download.jpg) no-repeat center center fixed;'">
 
-    
-<nav th:replace = "layouts :: navBarCode"></nav>
+   
+<nav th:replace = "layouts2 :: navBarCode"></nav>
 
 <div class="container" style="heiht:50vh;">
 
 
 
 	<hr>
-	
-	   <!-- <tr th:each = "aproduct:${productList}" >
-				  <td th:text = "${aproduct.name}">
-				  <td th:text = "${aproduct.stage}">
-				  <td th:text = "${aproduct.description}">
-					  
-					<div class = "col-md-4">
-						<div class="parentClass" style = "dislplay:flex">
-						<div class="imageDiv" style="background-color:blue" >
-	
-							<img src='uploads/th:text = /"${aproduct.image}"' alt="Shoe image">
-						</div>
-						<div class="productDetails">
-						  <p th:text = /"${aproduct.brandName}"></p>
-						  <br>
-						   <p th:text = /"${aproduct.Category}"></p>
-						   <br>
-							<p th:text = /"${aproduct.price}"></p>
-							<br>
-							<p th:text = /"${aproduct.description}"></p>
-							<br>
-	
-	
-						</div>
-						</div>
-			
-	
-		</div>
+
 				
 				
 				
-				-->
 	
 	
 		
@@ -71,6 +47,8 @@
 	
 	
 				</div>
+
+				<a><button class btn btn-primary> Add to Cart</button></a>
 	
 		</div>
 		<hr>
@@ -80,8 +58,6 @@
 	
 	</div>
 
-
-<script type = "text/javascript" th:src= "@{js/myChart.js}"></script>
 
 </body>
 </html>

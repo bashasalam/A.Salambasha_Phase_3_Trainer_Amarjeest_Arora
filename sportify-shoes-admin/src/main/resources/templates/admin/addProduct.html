@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace = "layouts :: headCode"></head>
+
+
+<body th:style="'background: url(/img/download.jpg) no-repeat center center fixed;'">
+
+    
+<nav th:replace = "layouts :: navBarCode"></nav>
+
+
+<div class="container">
+<h3>Add Product</h3>
+<a th:text="${VersionNum}"></a>
+<hr>
+<div class = "row">
+
+	<div class = "col-md-6">
+		<h4>Projects</h4>
+		<table class = "table table-bordered table-striped">
+	
+		<thead class ="thead-dark">
+		  <tr>
+		    <th>Project Stage</th>
+		    <th>Stage Count</th>
+		    <!--<th>Description</th>-->
+		  </tr>
+	  </thead>
+			  <tbody>
+			    <!-- <tr th:each = "aproject:${projectList}" >
+			  <td th:text = "${aproject.name}">
+			  <td th:text = "${aproject.stage}">
+			  <td th:text = "${aproject.description}">
+			  </tr> -->
+			  <tr th:each = "projectStage:${projectStageCount}" >
+			  <td th:text = "${projectStage.projectStage}">
+			  <td th:text = "${projectStage.stageCount}">
+			  
+			  </tr>
+			   
+			  </tbody>
+		</table>
+	</div>
+
+	<div class = "col-md-4">
+	<h4>Projects Chart</h4>
+		<canvas id=myPieChart height="50" width="50">
+	
+	</canvas>
+</div>
+</div>
+
+<div class = "row">
+	<div class = "col-md-6">
+	<h4>Employees</h4>
+	<table class = "table table-bordered table-striped">
+	
+		<thead class ="thead-dark">
+		  <tr>
+		    <th>First Name</th>
+		    <th>LastName</th>
+		 <!--   <th>Email</th> -->
+		 	    <th>Project Count</th>
+		  </tr>
+		  </thead>
+		  <tbody>
+			  <!-- <tr th:each = "aEmployee:${employeesList}" >
+			  <td th:text = "${aEmployee.firstName}">
+			  <td th:text = "${aEmployee.lastName}">
+			  <td th:text = "${aEmployee.email}">
+			  </tr> -->
+			  <tr th:each = "aEmployeeProjectCnt:${employeesListProjectsCnt}" >
+			  <td th:text = "${aEmployeeProjectCnt.firstName}">
+			  <td th:text = "${aEmployeeProjectCnt.lastName}">
+			  <td th:text = "${aEmployeeProjectCnt.ProjectCount}">
+			  </tr> 
+		   
+		  </tbody>
+	</table>
+	</div>
+</div>
+
+</div>
+
+
+<script type = "text/javascript" th:src= "@{js/myChart.js}"></script>
+
+</body>
+</html>

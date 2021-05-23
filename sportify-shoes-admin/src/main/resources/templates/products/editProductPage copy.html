@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace = "layouts :: headCode">
+
+
+
+</head>
+
+
+<body th:style="'background: url(/img/download.jpg) no-repeat center center fixed;'">
+
+    
+<nav th:replace = "layouts :: navBarCode"></nav>
+
+
+<div class="container">
+
+
+<hr>
+<div class = "row">
+
+	<div class = "col-md-6">
+		<h4>Add Shoes</h4>
+		<form action="/products/saveProduct" method="post" enctype="multipart/form-data">
+				
+		
+				<hr>
+				<legend for="brandName">Brand Name</legend>
+
+				<th:block th:if="${product.findBrand().isPresent()}">
+    <span th:text="${product.findBrand().get()" /> 
+</th:block>`
+<th:block th:if="${product.findBrand().isPresent()}">
+			<input  class="form-control" type="text" placeholder="Enter Brand name" th:value="${product.findBrand().get()" name="brandName" id="brandName" required>
+		</th:block>`
+			  <hr>
+			 <!-- <label for="Category"><b>Category</b></label> -->
+			<!-- <input type="password" placeholder="Enter Category" th:value="${product.name}" name="Category" id="Category" required> -->
+			<legend for="Category">Category</legend>
+				<div class="form-group">
+					<select id="1770822543"  
+					th:value="${product.Category}" name="Category" class="form-control">
+						<option value="Brogues"> Brogues </option>
+						<option value="Loafers"> Loafers </option>
+						<option value="Oxfords"> Oxfords </option>
+						<option value="Sneakers"> Sneakers </option>
+						<option value="Derbies"> Derbies </option>
+						<option value="Dress boots"> Dress boots </option>
+						<option value="Monk shoes"> Monk shoes </option>
+						<option value="Espradilles"> Espradilles </option>
+					
+			
+					</select>
+				</div>
+			  <hr>
+			<!-- <label for="price"><b>Price</b></label> -->
+			<legend for="Price">Price</legend>
+			
+			<!-- <input type="text" placeholder="Enter Email" th:value="${product.name}" name="email" id="email" required> -->
+			<input class="form-control" type="number" min="1" step="any"  th:value="${product.price}" name="price" required>
+
+		  <hr>
+		   
+			  <!-- <label for="description"><b>Description</b></label> -->
+			  <legend for="description">Description</legend>
+			  
+			<!-- <input type="text" placeholder="Enter City" th:value="${product.name}" name="city" id="city" required> -->
+			<textarea class="form-control" th:value="${product.description}" name="description"  placeholder=" Description" required ></textarea>
+			<hr>
+			<!-- <label for="description"><b>Image</b></label> -->
+			<legend for="fileToUpload">Image</legend>
+			<input class="form-control" type="file" th:value="${product.image}" name="fileToUpload" id="imageId">
+			<hr>
+		
+			<button type="submit" class="btn btn-primary">Save Product</button>
+		  
+		
+		
+		</form>
+	</div>
+
+
+
+</div>
+
+
+
+</body>
+</html>

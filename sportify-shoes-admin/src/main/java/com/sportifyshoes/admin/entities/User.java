@@ -14,7 +14,7 @@ public class User {
 	
 	private String uname;
 	private String pass;
-	private String email;
+	private String email;	
 	private String city;
 	
 	public User() {

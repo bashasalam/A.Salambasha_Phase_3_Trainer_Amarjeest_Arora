@@ -5,13 +5,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.web.multipart.MultipartFile;
+
 @Entity
 public class Product {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long productId;
-	private String name;
+	private String brand;
 	private String Category;
 	private double price;
 	private String description;
@@ -19,25 +21,27 @@ public class Product {
 	public Product() {
 		super();
 	}
-	public Product(String name, String category, double price, String description, String image) {
+	public Product(String brand, String category, double price, String description, String image) {
 		super();
-		this.name = name;
+		this.brand = brand;
 		Category = category;
 		this.price = price;
 		this.description = description;
 		this.image = image;
 	}
-	public long getProductId() {
+	
+	
+		public long getProductId() {
 		return productId;
 	}
 	public void setProductId(long productId) {
 		this.productId = productId;
 	}
-	public String getName() {
-		return name;
+	public String getBrand() {
+		return brand;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setBrand(String brand) {
+		this.brand = brand;
 	}
 	public String getCategory() {
 		return Category;
@@ -63,9 +67,9 @@ public class Product {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	@Override
+		@Override
 	public String toString() {
-		return "Product [productId=" + productId + ", name=" + name + ", Category=" + Category + ", price=" + price
+		return "Product [productId=" + productId + ", brand=" + brand + ", Category=" + Category + ", price=" + price
 				+ ", description=" + description + "]";
 	}
 	

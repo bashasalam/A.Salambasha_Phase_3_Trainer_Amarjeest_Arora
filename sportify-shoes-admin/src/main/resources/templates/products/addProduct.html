@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace = "layouts :: headCode">
+
+
+
+</head>
+
+
+<body th:style="'background: url(/img/download.jpg) no-repeat center center fixed;'">
+
+    
+<nav th:replace = "layouts :: navBarCode"></nav>
+
+
+<div class="container">
+
+
+<hr>
+<div class = "row">
+
+	<div class = "col-md-6">
+		<h4>Add Shoes</h4>
+		<form action="/products/saveProduct" method="post" enctype="multipart/form-data">
+				
+		
+				<hr>
+				<legend for="brandName">Brand Name</legend>
+			  
+			<input  class="form-control" type="text" placeholder="Enter Brand name" name="brandName" id="brandName" required>
+			  <hr>
+			 <!-- <label for="Category"><b>Category</b></label> -->
+			<!-- <input type="password" placeholder="Enter Category" name="Category" id="Category" required> -->
+			<legend for="Category">Category</legend>
+				<div class="form-group">
+					<select id="1770822543" name="Category" class="form-control">
+						<option value="Brogues"> Brogues </option>
+						<option value="Loafers"> Loafers </option>
+						<option value="Oxfords"> Oxfords </option>
+						<option value="Sneakers"> Sneakers </option>
+						<option value="Derbies"> Derbies </option>
+						<option value="Dress boots"> Dress boots </option>
+						<option value="Monk shoes"> Monk shoes </option>
+						<option value="Espradilles"> Espradilles </option>
+					
+			
+					</select>
+				</div>
+			  <hr>
+			<!-- <label for="price"><b>Price</b></label> -->
+			<legend for="Price">Price</legend>
+			
+			<!-- <input type="text" placeholder="Enter Email" name="email" id="email" required> -->
+			<input class="form-control" type="number" min="1" step="any"  name="price" required>
+
+		  <hr>
+		   
+			  <!-- <label for="description"><b>Description</b></label> -->
+			  <legend for="description">Description</legend>
+			  
+			<!-- <input type="text" placeholder="Enter City" name="city" id="city" required> -->
+			<textarea class="form-control" name="description"  placeholder=" Description" required ></textarea>
+			<hr>
+			<!-- <label for="description"><b>Image</b></label> -->
+			<legend for="fileToUpload">Image</legend>
+			<input class="form-control" type="file" name="fileToUpload" id="imageId">
+			<hr>
+		
+			<button type="submit" class="btn btn-primary">Save Product</button>
+		  
+		
+		
+		</form>
+	</div>
+
+
+
+</div>
+
+
+
+</body>
+</html>

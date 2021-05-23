@@ -14,81 +14,83 @@
 <nav th:replace = "layouts :: navBarCode"></nav>
 
 
-<div class="container">
-<h3>Main Dashboard </h3>
-<a th:text="${VersionNum}"></a>
+<div class="container" style="heiht:50vh;">
+
+
+
 <hr>
-<div class = "row">
 
-	<div class = "col-md-6">
-		<h4>Projects</h4>
-		<table class = "table table-bordered table-striped">
-	
-		<thead class ="thead-dark">
-		  <tr>
-		    <th>Project Stage</th>
-		    <th>Stage Count</th>
-		    <!--<th>Description</th>-->
-		  </tr>
-	  </thead>
-			  <tbody>
-			    <!-- <tr th:each = "aproject:${projectList}" >
-			  <td th:text = "${aproject.name}">
-			  <td th:text = "${aproject.stage}">
-			  <td th:text = "${aproject.description}">
-			  </tr> -->
-			  <tr th:each = "projectStage:${projectStageCount}" >
-			  <td th:text = "${projectStage.projectStage}">
-			  <td th:text = "${projectStage.stageCount}">
-			  
-			  </tr>
-			   
-			  </tbody>
-		</table>
+   <!-- <tr th:each = "aproduct:${productList}" >
+			  <td th:text = "${aproduct.name}">
+			  <td th:text = "${aproduct.stage}">
+			  <td th:text = "${aproduct.description}">
+				  
+				<div class = "col-md-4">
+					<div class="parentClass" style = "dislplay:flex">
+					<div class="imageDiv" style="background-color:blue" >
+
+						<img src='uploads/th:text = /"${aproduct.image}"' alt="Shoe image">
+					</div>
+					<div class="productDetails">
+                      <p th:text = /"${aproduct.brandName}"></p>
+					  <br>
+					   <p th:text = /"${aproduct.Category}"></p>
+					   <br>
+					    <p th:text = /"${aproduct.price}"></p>
+						<br>
+						<p th:text = /"${aproduct.description}"></p>
+						<br>
+
+
+					</div>
+					</div>
+		
+
 	</div>
+			
+			
+			
+			-->
 
-	<div class = "col-md-4">
-	<h4>Projects Chart</h4>
-		<canvas id=myPieChart height="50" width="50">
-	
-	</canvas>
-</div>
-</div>
 
-<div class = "row">
-	<div class = "col-md-6">
-	<h4>Employees</h4>
-	<table class = "table table-bordered table-striped">
 	
-		<thead class ="thead-dark">
-		  <tr>
-		    <th>First Name</th>
-		    <th>LastName</th>
-		 <!--   <th>Email</th> -->
-		 	    <th>Project Count</th>
-		  </tr>
-		  </thead>
-		  <tbody>
-			  <!-- <tr th:each = "aEmployee:${employeesList}" >
-			  <td th:text = "${aEmployee.firstName}">
-			  <td th:text = "${aEmployee.lastName}">
-			  <td th:text = "${aEmployee.email}">
-			  </tr> -->
-			  <tr th:each = "aEmployeeProjectCnt:${employeesListProjectsCnt}" >
-			  <td th:text = "${aEmployeeProjectCnt.firstName}">
-			  <td th:text = "${aEmployeeProjectCnt.lastName}">
-			  <td th:text = "${aEmployeeProjectCnt.ProjectCount}">
-			  </tr> 
-		   
-		  </tbody>
-	</table>
+	<div class = "" th:each ="aproduct:${productList}" style = "dislplay:flex; flex-direction: row;">
+		<div class="row">
+		<div class = "col-md-6" style="background-color: white;">
+			<div class="parentClass" style = "dislplay:flex !important; flex-direction: row;">
+							<img  th:src = "${aproduct.image}" alt="Shoe image"/>
+			<div>
+			
+		<!--	<p th:text = "${aproduct.image}"></p> -->
+			<!-- <h2>Brand Name</h2>        <h2 th:text = "${aproduct.productId}"></h2> -->
+				<h2>Brand Name</h2>        <h2 th:text = "${aproduct.brand}"></h2>
+				<hr>
+				<h2>Category</h2>  <h2 th:text = "${aproduct.Category}"></h2>
+				<hr>
+				<h2>Price</h2>  <h2 th:text = "${aproduct.price}"></h2>
+				<hr>
+				<h2>Description</h2> 	<h2 th:text = "${aproduct.description}"></h2>
+				<hr>
+				
+			</div>
+
+
+			</div>
+
 	</div>
-</div>
+	<hr>
 
 </div>
 
 
-<script type = "text/javascript" th:src= "@{js/myChart.js}"></script>
+</div>
+
+
+
+
+
+
+
 
 </body>
 </html>

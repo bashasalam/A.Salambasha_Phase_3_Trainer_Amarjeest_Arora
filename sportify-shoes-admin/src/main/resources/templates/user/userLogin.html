@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace = "layouts :: headCode"></head>
+
+
+<body th:style="'background: url(/img/download.jpg) no-repeat center center fixed;'">
+
+    
+<nav th:replace = "layouts :: navBarCode"></nav>
+
+
+
+<h2>Login Page</h2><br>    
+    <div class="login justify-content-md-center">    
+    <form id="login" method="post" action="/user/checkUserLogin">    
+        <label><b>User Name     
+        </b>    
+        </label>    
+        <input type="text" name="uname" id="uname" placeholder="Username">    
+        <br><br>    
+        <label><b>Password     
+        </b>    
+        </label>    
+        <input type="password" name="pass" id="pass" placeholder="Password">    
+        <br><br>    
+        <input type="submit" class="btn btn-primary" name="userSubmit" id="log" value="Log In Here">  
+		<br>
+		
+        <!-- <br><br>    
+        <input type="checkbox" id="check" style="display: hidden;">    
+        <span style="display: hidden;">Remember me</span>    
+        <br><br>    
+     <a href="#">Password</a>     -->
+    </form>     
+
+	<br><br>
+			<a href="http://localhost:8080/user/signup" style="margin-right: 50px;"><button class="btn btn-primary"> New User</button></a>
+</div>    
+
+
+</body>
+</html>

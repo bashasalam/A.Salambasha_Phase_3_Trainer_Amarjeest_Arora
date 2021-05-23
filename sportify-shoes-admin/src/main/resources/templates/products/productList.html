@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace = "layouts :: headCode">
+
+
+
+</head>
+
+
+<body th:style="'background: url(/img/download.jpg) no-repeat center center fixed;'">
+
+    
+<nav th:replace = "layouts :: navBarCode"></nav>
+
+<div class="container">
+	<h3>Product Dashboard </h3>
+<div>
+<form action="products/searchByname"> 
+
+<label for=""> search by name</label>	<input type="search" name= "brandName" placehoder="search by brand"/>
+	<input type="submit">
+</form>
+
+</div>
+
+	<hr>
+	<div class = "row">
+	
+		<div class = "col-md-6">
+			<h4>Products</h4>
+			<table class = "table table-bordered table-striped">
+		
+			<thead class ="thead-dark">
+			  <tr>
+				<th>Brand Name</th>
+				<th>Category</th>
+				<th>Price</th>
+				<th>Description</th>
+				<th>Image</th>
+			
+				<th>Edit</th>
+				<th>Delete</th>
+				<!--<th>Description</th>-->
+			  </tr>
+		  </thead>
+				  <tbody>
+					<tr th:each = "aproduct:${productList}" >
+				  <td th:text = "${aproduct.brand}">
+				  <td th:text = "${aproduct.Category}">
+				  <td th:text = "${aproduct.price}">
+					   <td th:text = "${aproduct.description}">
+						    <td th:text = "${aproduct.image}">
+
+								<td >
+									<form action="/products/editProduct" method="POST"> 
+										<input type="hidden" name ="productId" th:value=${aproduct.productId} >
+									
+							<input type=submit class=" btn btn-primary" value = "Edit/Update">
+								</form>
+								</td>
+								<td > 	<form action="/products/deleteProduct" method="POST"> 
+									<input type="hidden" th:value=${aproduct.productId} name = "deleteId">
+								
+						<input type=submit class=" btn btn-danger" value = "Delete" onclick="return confirm('Are You Sure?');">
+							</form>   </td>
+				  </tr>
+			
+				  
+				  
+				   
+				  </tbody>
+			</table>
+		</div>
+	
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
